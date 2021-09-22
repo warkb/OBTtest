@@ -4,7 +4,7 @@ from objectpack.ui import ModelEditWindow
 from django.contrib.auth.models import User, Group, Permission
 from django.contrib.contenttypes.models import ContentType
 
-from .ui import UserAddWindow
+from .ui import UserAddWindow, PermissionAddWindow
 
 
 class UserPack(ObjectPack):
@@ -29,4 +29,4 @@ class PermissionPack(ObjectPack):
     model = Permission
     add_to_menu = True
     can_delete = True
-    add_window = edit_window = ModelEditWindow.fabricate(model=Group)
+    add_window = edit_window = PermissionAddWindow
