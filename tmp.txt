@@ -1,0 +1,6 @@
+adding trusted host: 'pypi.bars-open.ru' (from line 2 of requirements.txt)
+Looking in indexes: https://pypi.org/simple, http://pypi.bars-open.ru/simple/
+Collecting django==2.2
+  Using cached Django-2.2-py3-none-any.whl (7.4 MB)
+Collecting m3-objectpack==2.2.46
+  Using cached m3-objectpack-2.2.46.tar.gz (108 kB)
