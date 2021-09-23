@@ -1,6 +1,6 @@
 from objectpack.ui import BaseEditWindow, make_combo_box, model_fields_to_controls
 from m3_ext.ui import all_components as ext
-
+from objectpack.ui import ModelEditWindow
 from django.contrib.auth.models import User, Permission
 
 
@@ -95,42 +95,42 @@ class UserAddWindow(BaseEditWindow):
 
 
 
-# class PermissionAddWindow(BaseEditWindow):
-#     def _init_components(self):
-#         super()._init_components()
+class PermissionAddWindow(BaseEditWindow):
+    def _init_components(self):
 
-#         self.field__name = ext.ExtStringField(
-#             label=u'name',
-#             name='name',
-#             anchor='100%')
+        super()._init_components()
+        self.field__name = ext.ExtStringField(
+            label=u'name',
+            name='name',
+            anchor='100%')
 
-#         self.field__codename = ext.ExtStringField(
-#             label=u'codename',
-#             name='codename',
-#             anchor='100%')
+        self.field__codename = ext.ExtStringField(
+            label=u'codename',
+            name='codename',
+            anchor='100%')
 
-#         self.field__content_type = model_fields_to_controls(
-#             model=Permission,
-#             window=)
+        self.field__content_type = ext.ExtDictSelectField(
+            label=u'content_type',
+            name=u'content_type')
 
-        
 
-#     def _do_layout(self):
-#         """
-#         Здесь размещаем компоненты в окне
-#         """
-#         super()._do_layout()
-#         self.form.items.extend((
-#             self.field__name,
-#             self.field__content_type,
-#             self.field__codename
-#         ))
+    def _do_layout(self):
+        """
+        Здесь размещаем компоненты в окне
+        """
+        super()._do_layout()
+        self.form.items.extend((
+            self.field__name,
+            self.field__content_type,
+            self.field__codename
+        ))
 
-#     def set_params(self, params):
-#         """
-#         Установка параметров окна
+    def set_params(self, params):
+        """
+        Установка параметров окна
 
-#         :params: Словарь с параметрами, передается из пака
-#         """
-#         super().set_params(params)
-#         self.height = 'auto'
+        :params: Словарь с параметрами, передается из пака
+        """
+        super().set_params(params)
+        self.height = 'auto'
+        self.field__content_type.pack = 'app.actions.ContentTypePack'

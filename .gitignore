@@ -1,3 +1,4 @@
 env/
 .idea/
 *.pyc
+m3_project/db.sqlite3
