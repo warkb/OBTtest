@@ -8,24 +8,6 @@ from .ui import UserAddWindow, PermissionAddWindow
 
 
 
-obs =Observer()
-
-action_controller = ObservableController(obs, "/controller")
-
-@obs.subscribe
-class Listener(object):
-
-    # список регулярок, для сопоставления экшенам
-    listen = ['ObjectSaveAction']
-
-    def before(self, request, context, response):
-        print('===============================')
-        print('===============================')
-        print('===============================')
-        print('===============================')
-        print('===============================')
-        print('===============================')
-
 class UserPack(ObjectPack):
     model = User
     add_to_menu = True
